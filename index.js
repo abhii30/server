@@ -20,10 +20,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set up MongoDB connection
-mongoose.connect("mongodb://localhost/my_database", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://codeforall:codeforall@cluster0.thl3ihl.mongodb.net/test",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // Define authentication middleware
 const authenticateUser = async (req, res, next) => {
