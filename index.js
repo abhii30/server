@@ -73,6 +73,8 @@ app.post("/api/comment/:id", function (req, res) {
 });
 app.get("/api/posts/:id", postController.getPostById);
 app.get("/api/all_posts", authenticateUser, postController.getAllPosts);
-
+app.get("/app/health", function (req, res) {
+  res.send({ status: "OK" });
+});
 const port = 3000;
 app.listen(port, () => console.log(`Server listening on port ${port}`));
